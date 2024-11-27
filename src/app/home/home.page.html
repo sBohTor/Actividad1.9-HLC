@@ -21,8 +21,14 @@
     <ion-button expand="full" (click)="hacerApuesta()" [disabled]="!apuesta">Apostar</ion-button>
   </div>
 
-  <div *ngIf="mostrarRuleta" class="ruleta-container">
-    <ion-img src="assets\ruleta-03.gif" alt="Ruleta" />
+  <div *ngIf="ruletaVisible" class="ruleta-container">
+    <div *ngIf="isPortrait" class="vertical">
+      <ion-img src="assets/ruleta-03.gif" alt="Ruleta Vertical" />
+    </div>
+
+    <div *ngIf="!isPortrait" class="horizontal">
+      <ion-img src="https://media.tenor.com/neir67NC49wAAAAM/ruleta.gif " alt="Ruleta Horizontal" />
+    </div>
   </div>
 
   <div *ngIf="resultado" class="result-container">
