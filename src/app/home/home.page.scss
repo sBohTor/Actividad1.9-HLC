@@ -1,3 +1,4 @@
+/* Estilo general que centra el contenido */
 .center-content {
   display: flex;
   flex-direction: column;
@@ -6,22 +7,25 @@
   height: 100%;
 }
 
+/* Estilos de los contenedores de entrada */
 .input-container {
   width: 80%;
   margin: 10px 0;
 }
 
+/* Estilos para el contenedor de la ruleta */
 .ruleta-container {
   margin: 20px 0;
   text-align: center;
 }
 
+/* Estilos para mostrar los resultados */
 .result-container {
   text-align: center;
   margin-top: 20px;
 }
 
-
+/* Clases para ruleta en vertical u horizontal, inicialmente solo la vertical es visible */
 .vertical {
   display: inline-block;
 }
@@ -30,6 +34,7 @@
   display: none;  
 }
 
+/*para pantallas en modo retrato (portrait) */
 @media (orientation: portrait) {
   .vertical {
     display: block; 
@@ -40,11 +45,34 @@
   }
 
   .ruleta-container img {
-    width: 50%; 
+    width: 50%; /* Ajusta el tamaño de la ruleta en modo retrato */
     height: auto;
+  }
+
+  /* Estilo para pantallas pequeñas en portrait */
+  @media (max-width: 320px) {
+    .input-container {
+      width: 90%; 
+    }
+
+    .ruleta-container img {
+      width: 60%; 
+    }
+  }
+
+  /* Estilo para pantallas medianas en portrait */
+  @media (min-width: 321px) and (max-width: 480px) {
+    .input-container {
+      width: 85%;
+    }
+
+    .ruleta-container img {
+      width: 55%;
+    }
   }
 }
 
+/*para pantallas en modo paisaje (landscape) */
 @media (orientation: landscape) {
   .vertical {
     display: none; 
@@ -55,7 +83,32 @@
   }
 
   .ruleta-container img {
-    width: 30%;
+    width: 30%; 
     height: auto;
+  }
+
+  /* Estilo para pantallas pequeñas en landscape */
+  @media (max-width: 480px) {
+    .ruleta-container img {
+      width: 50%; 
+    }
+  }
+
+  /* Estilo para pantallas grandes en landscape */
+  @media (min-width: 1024px) {
+    .ruleta-container img {
+      width: 25%; 
+    }
+  }
+}
+
+/*pantallas muy grandes (como tablets o dispositivos de escritorio) */
+@media (min-width: 1200px) {
+  .input-container {
+    width: 60%; 
+  }
+
+  .ruleta-container img {
+    width: 20%; 
   }
 }
